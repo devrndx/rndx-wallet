@@ -201,7 +201,7 @@ class CreateUser extends React.Component {
             className={
               !errors && inputs.phonenum && inputs.firstName && inputs.email
                 ? style.buttonEnable
-                : style.buttonBorderGreen
+                : style.buttonBorderWhite
             }
             onClick={() => {
               this.inputValidator();

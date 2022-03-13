@@ -23,7 +23,7 @@
     composes: textDefault from "./textBase.css";
     border-radius: 6px;
     border: none;
-    color: white;
+    color: #B2B2B2B2;
     padding: 15px;
     width: 100%;
     height: 50px;
@@ -61,7 +61,7 @@
 
 :local(.buttonEnable) {
     composes: buttonDefault;
-    composes: bgGreenLight from "./colorBase.css";
+    composes: bgWhiteLight from "./colorBase.css";
 }
 
 
@@ -69,22 +69,17 @@
 
 :local(.buttonPurpleClear) {
     composes: buttonGeneral;
-    composes: bgBlueClear from "./colorBase.css";
+    composes: bgWhiteClear from "./colorBase.css";
 }
 
-:local(.buttonPurpleLight) {
+:local(.buttonWhiteDark) {
     composes: buttonGeneral;
-    composes: bgBlueDefault from "./colorBase.css";
+    composes: bgWhiteDark from "./colorBase.css";
 }
 
-:local(.buttonPurpleDark) {
-    composes: buttonGeneral;
-    composes: bgBlueDark from "./colorBase.css";
-}
-
-:local(.buttonBorderGreen) {
+:local(.buttonBorderWhite) {
     composes: buttonDisabled;
-    composes: bdGreenLight from "./colorBase.css";
+    composes: bdWhiteDark from "./colorBase.css";
     background-color: transparent;
     border-style: solid;
     border-width: 1px;
@@ -117,7 +112,7 @@
 
 :local(.receiveButton) {
     composes: actionButtonDefaul;
-    composes: bgGreenDefault from "./colorBase.css";
+    composes: bgWhiteDefault from "./colorBase.css";
 }
 
 

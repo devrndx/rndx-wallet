@@ -12,7 +12,7 @@
 
 :local .box {
     composes: textDefault from "../components/bases/textBase.css";
-    composes: bgBlueDefault from "../components/bases/colorBase.css";
+    composes: bgWhiteDefault from "../components/bases/colorBase.css";
     border-radius: 5px;
     padding-left: 30px;
     padding-right: 30px;
@@ -55,7 +55,7 @@
 }
 
 :local(.btContinueDisable) {
-    composes: buttonBorderGreen from "../components/bases/buttonBase.css";
+    composes: buttonBorderWhite from "../components/bases/buttonBase.css";
     composes: bt;
 }
 
@@ -112,5 +112,5 @@
 }
 
 :local .logoRNDX span span {
-    color: #253DA1;
+    color: #FCFCFC;
 }

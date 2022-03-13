@@ -7,7 +7,7 @@ const checkBoxStyles = {
   root: {
     color: colors.messages.info,
     "&$checked": {
-      color: colors.green.light
+      color: colors.gray.dark
     }
   },
   checked: {}

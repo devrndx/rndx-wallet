@@ -24,24 +24,24 @@
 
 /* 1.1 BACKGROUND */
 
-:local(.bgBlueDefault) {
-    background-color: #02198B;
+:local(.bgWhiteDefault) {
+    background-color: #FCFCFC;
 }
 
-:local(.bgBlueClear) {
-    background-color: #253DA1;
+:local(.bgWhiteClear) {
+    background-color: #FCFCFC;
 }
 
-:local(.bgGrayLight) {
-    background-color: #B0DBF1;
+:local(.bgWhiteLight) {
+    background-color: #F6F6F6;
 }
 
-:local(.bgGrayMedium) {
-    background-color: #02055A;
+:local(.bgWhiteMedium) {
+    background-color: #D5D5D5;
 }
 
-:local(.bgBlueDark) {
-    background-color: #000137;
+:local(.bgWhiteDark) {
+    background-color: #B2B2B2;
 }
 
 
@@ -60,7 +60,7 @@
 }
 
 :local(.clPurpleDark) {
-    color: #253DA1;
+    color: #FCFCFC;
 }
 
 
@@ -73,11 +73,11 @@
 /* 2.1 BACKGROUND */
 
 :local(.bgGreenDefault) {
-    background-color: #B0DBF1;
+    background-color: #F6F6F6;
 }
 
 :local(.bgGreenLight) {
-    background-color: #B0DBF1;
+    background-color: #F6F6F6;
 }
 
 :local(.bgGreenDark) {
@@ -88,11 +88,11 @@
 /* 2.2 COLOR */
 
 :local(.clBlueDefault) {
-    color: #B0DBF1;
+    color: #02055A;
 }
 
 :local(.clBlueLight) {
-    color: #B0DBF1;
+    color: #02055A;
 }
 
 :local(.clGreenDark) {
@@ -102,8 +102,8 @@
 
 /* 2.3 BORDER */
 
-:local(.bdBlueDefault) {
-    border-color: #253DA1;
+:local(.bdWhiteDark) {
+    border-color: #B2B2B2;
 }
 
 :local(.bdGreenDefault) {
@@ -160,7 +160,7 @@
 /* 4.1 BACKGROUND */
 
 :local(.bgSuccess) {
-    background-color: #68f285;
+    background-color: #B2B2B2;
 }
 
 :local(.bgError) {

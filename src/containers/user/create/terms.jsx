@@ -104,7 +104,7 @@ class CreateUserTerms extends React.Component {
           className={
             inputs.checkboxAge
               ? style.buttonEnable
-              : style.buttonBorderGreen
+              : style.buttonBorderWhite
           }
           onClick={() => this.validateInput()}
         >

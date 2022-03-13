@@ -130,7 +130,7 @@ class Auth extends React.Component {
           className={
             inputs.emailUsername && inputs.password && !errors
               ? style.buttonEnable
-              : style.buttonBorderGreen
+              : style.buttonBorderWhite
           }
           onClick={() => {
             this.inputValidator();

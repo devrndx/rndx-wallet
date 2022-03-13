@@ -213,7 +213,7 @@ class Password extends React.Component {
             passwordHint[4] &&
             inputs.passwordRepeat
               ? style.buttonEnable
-              : style.buttonBorderGreen
+              : style.buttonBorderWhite
           }
           onClick={
             passwordHint[0] &&

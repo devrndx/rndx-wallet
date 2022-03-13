@@ -1,9 +1,9 @@
 :local(.defaultP) {
-  color: white;
-  font-size: 14px;
+    color: black;
+    font-size: 14px;
 }
 
 :local(.clGreen) {
-  composes: defaultP;
-  color: green;
+    composes: defaultP;
+    color: black;
 }

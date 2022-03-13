@@ -1,8 +1,8 @@
 const colors = {
     gray: {
         default: "#02198B",
-        clear: "#253DA1",
-        light: "#B0DBF1",
+        clear: "#FCFCFC",
+        light: "#F6F6F6",
         dark: "#02055A"
     },
     green: {
@@ -15,7 +15,7 @@ const colors = {
         bitcoin: "#f7921a"
     },
     messages: {
-        info: "#ffffff",
+        info: "#02198B",
         success: "#68f285",
         error: "#f05252",
         warning: "#f7921a"

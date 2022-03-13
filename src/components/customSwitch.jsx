@@ -12,7 +12,7 @@ import style from "./style.css";
 const materialStyle = theme => ({
   iOSSwitchBase: {
     '&$iOSChecked': {
-      color: '#ffffff',
+      color: '#000000',
       '& + $iOSBar': {
         backgroundColor: '#52d869',
       },

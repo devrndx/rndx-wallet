@@ -115,7 +115,7 @@ class ResetUser extends React.Component {
           className={
             inputs.emailUsername && !errors
               ? style.buttonEnable
-              : style.buttonBorderGreen
+              : style.buttonBorderWhite
           }
           onClick={() => this.inputValidator()}
         >

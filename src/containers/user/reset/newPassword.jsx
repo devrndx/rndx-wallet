@@ -187,7 +187,7 @@ class NewPassword extends React.Component {
             passwordHint[3] &&
             inputs.passwordRepeat
               ? style.buttonEnable
-              : style.buttonBorderGreen
+              : style.buttonBorderWhite
           }
           onClick={() => this.inputValidator()}
         >

@@ -24,7 +24,7 @@ class Loading extends Component {
         width: '100vw',
         height: '100vh',
         flexFlow: 'wrap',
-        background: '#253DA1',
+        background: '#FCFCFC',
         zIndex: '999',
       }
     if (!color) color = "white";

@@ -110,7 +110,7 @@ class Seed extends React.Component {
         </center>
         <button
           className={
-            style.buttonBorderGreen
+            style.buttonBorderWhite
           }
           onClick={() => {
             this.inputValidator();
@@ -141,7 +141,7 @@ class Seed extends React.Component {
 
         <button
           className={
-            buttonEnable ? style.buttonEnable : style.buttonBorderGreen
+            buttonEnable ? style.buttonEnable : style.buttonBorderWhite
           }
           onClick={() => {
             this.inputValidator();

@@ -31,7 +31,7 @@
 /* 2.1 CARD */
 
 :local(.cardHome) {
-    composes: bgBlueDefault from "../../components/bases/colorBase.css";
+    composes: bgWhiteDefault from "../../components/bases/colorBase.css";
     width: 275px;
     padding: 20px 5px 8px 5px;
     border-radius: 10px;

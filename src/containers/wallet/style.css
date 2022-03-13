@@ -45,24 +45,24 @@
 }
 
 :local .boxCoinActive {
-    composes: bgBlueClear from "../../components/bases/colorBase.css";
+    composes: bgWhiteClear from "../../components/bases/colorBase.css";
     composes: boxCoin;
 }
 
 :local .boxCoin:hover {
-    include: bgBlueClear from "../../components/bases/colorBase.css";
+    include: bgWhiteClear from "../../components/bases/colorBase.css";
     cursor: pointer;
     opacity: 1;
 }
 
 :local .contentCoins {
-    composes: bgGrayLight from "../../components/bases/colorBase.css";
+    composes: bgWhiteLight from "../../components/bases/colorBase.css";
     box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.05);
     margin-left: 1px;
 }
 
 :local .boxIconCoin {
-    composes: bgBlueClear from "../../components/bases/colorBase.css";
+    composes: bgWhiteClear from "../../components/bases/colorBase.css";
     padding: 18px;
     float: left;
     border-radius: 8px;
@@ -123,7 +123,7 @@
         margin-left: -5px;
     }
      :local .boxCoinActive {
-        composes: bgBlueClear from "../../components/bases/colorBase.css";
+        composes: bgWhiteClear from "../../components/bases/colorBase.css";
         composes: boxCoin;
         max-width: 80px;
     }
@@ -172,7 +172,7 @@
 
 :local(.coinSel) {
     composes: styleCoinDefalt;
-    background-color: #253DA1;
+    background-color: #FCFCFC;
     border-radius: 7px;
     text-align: center;
     height: 100%;
@@ -200,7 +200,7 @@
 }
 
 :local(.balanceItem) {
-    background-color: #253DA1;
+    background-color: #FCFCFC;
     text-align: right;
     border-radius: 8px;
     padding: 5px 10px;
@@ -324,7 +324,7 @@
 :local(.contentTransactions) {
     border-radius: 8px;
     box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.05);
-    background-color: #253DA1;
+    background-color: #FCFCFC;
     max-height: 55vh;
     overflow: auto;
     padding-bottom: 100px;
@@ -493,7 +493,7 @@
 :local(.refleshIcon) {
     composes: displayAlign;
     cursor: pointer;
-    background-color: #253DA1;
+    background-color: #FCFCFC;
     border-radius: 20px;
     padding: 6px;
     float: right;
@@ -595,7 +595,7 @@
 }
 
 :local(.btContinueDisable) {
-    composes: buttonBorderGreen from "../../components/bases/buttonBase.css";
+    composes: buttonBorderWhite from "../../components/bases/buttonBase.css";
     composes: bt;
 }
 

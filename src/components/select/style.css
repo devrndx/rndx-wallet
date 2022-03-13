@@ -14,7 +14,7 @@
 }
 
 :local .list {
-    composes: bgBlueDefault from "../../components/bases/colorBase.css";
+    composes: bgWhiteDefault from "../../components/bases/colorBase.css";
     display: block;
     list-style: none;
     margin-left: -10px;

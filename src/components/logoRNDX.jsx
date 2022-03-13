@@ -36,13 +36,10 @@ class LogoRNDX extends React.Component {
           }
         >
           <img
-            src={"images/icons/tokens/RNDX_logo_W.png"}
-            height="50px"
-            width="50px"
+            src={"images/icons/tokens/RNDX_Wallet_Logo.png"}
+            height="150px"
+            width="100px"
           />
-          <span>
-            Round <span>X</span>
-          </span>
         </div>
       </div>
     );

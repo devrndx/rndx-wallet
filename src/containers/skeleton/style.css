@@ -18,7 +18,7 @@
 /* 1. BASE */
 
 :local(.colContainer) {
-    composes: bgBlueDark from "../../components/bases/colorBase.css";
+    composes: bgWhiteDark from "../../components/bases/colorBase.css";
     height: 85vh;
     overflow: auto;
     padding: 8px;
@@ -29,7 +29,7 @@
 }
 
 :local(.colMenu) {
-    composes: bgGrayLight from "../../components/bases/colorBase.css";
+    composes: bgWhiteLight from "../../components/bases/colorBase.css";
     height: 100vh;
     overflow: auto;
     padding-top: 30px;
@@ -39,7 +39,7 @@
 }
 
 :local(.header) {
-    composes: bgGrayLight from "../../components/bases/colorBase.css";
+    composes: bgWhiteLight from "../../components/bases/colorBase.css";
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -70,7 +70,7 @@
 }
 
 :local .menuUser {
-    composes: bgGrayLight from "../../components/bases/colorBase.css";
+    composes: bgWhiteLight from "../../components/bases/colorBase.css";
     margin-top: 15px;
     width: 170px;
     border-radius: 8px;
@@ -103,7 +103,7 @@
 
 :local(.linkMenu) {
     composes: linkDefault from "../../components/bases/textBase.css";
-    composes: bdGreenDefault from "../../components/bases/colorBase.css";
+    composes: bdWhiteDark from "../../components/bases/colorBase.css";
     font-weight: bold;
     display: block;
     padding-left: 20px;
@@ -134,7 +134,7 @@
 
 :local(.linkMenuActive) {
     composes: linkDefault from "../../components/bases/textBase.css";
-    composes: bdGreenDefault from "../../components/bases/colorBase.css";
+    composes: bdWhiteDark from "../../components/bases/colorBase.css";
     display: block;
     padding-left: 20px;
     padding-top: 20px;
@@ -248,7 +248,7 @@
 /* eslint-disable */
 
 :local .arrowUp {
-    composes: bgGrayLight from "../../components/bases/colorBase.css";
+    composes: bgWhiteLight from "../../components/bases/colorBase.css";
     width: 24px;
     height: 24px;
     transform: rotate(45deg);
@@ -328,7 +328,7 @@
 }
 
 :local(body) {
-    background-color: #253DA1;
+    background-color: #FCFCFC;
 }
 
 :local(.menuP2P) {
