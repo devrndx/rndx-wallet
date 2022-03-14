@@ -1,14 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updatePassword } from "firebase/auth";
 
-
 const firebaseConfig = {
-    apiKey: "AIzaSyBbWx630F8Lb-Vsov_jnqHj1pn5pTYL0m8",
-    authDomain: "rndx-client-wallet.firebaseapp.com",
-    projectId: "rndx-client-wallet",
-    storageBucket: "rndx-client-wallet.appspot.com",
-    messagingSenderId: "288293074890",
-    appId: "1:288293074890:web:bcb29c73e998d5d97f0133",
+    apiKey: "AIzaSyAIqChCk2TpIaK5kRbM-HjzpQysxOtSG6A",
+    authDomain: "roundx-556ef.firebaseapp.com",
+    projectId: "roundx-556ef",
+    storageBucket: "roundx-556ef.appspot.com",
+    messagingSenderId: "432405906492",
+    appId: "1:432405906492:web:41ba2df265534cae466f39"
 };
 
 initializeApp(firebaseConfig);

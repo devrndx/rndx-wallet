@@ -37,7 +37,7 @@ class LogoRNDX extends React.Component {
         >
           <img
             src={"images/icons/tokens/RNDX_Wallet_Logo.png"}
-            height="150px"
+            height="131px"
             width="100px"
           />
         </div>
