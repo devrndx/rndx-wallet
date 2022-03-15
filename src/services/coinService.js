@@ -96,29 +96,24 @@ class CoinService {
                         BASE_URL + "/users/getbalance", { params: { id: getUsername() }, headers: { "Authorization": token } }
                     );
 
-                    if (responseBalance.data.balance) {
-                        availableCoins.token = responseBalance.headers[HEADER_RESPONSE];
-                        availableCoins[index].balance = {
-                            available: parseInt(responseBalance.data.balance),
-                            total: parseInt(responseBalance.data.balance),
-                        };
+                    availableCoins.token = responseBalance.headers[HEADER_RESPONSE];
+                    availableCoins[index].balance = {
+                        available: parseInt(responseBalance.data.balance),
+                        total: parseInt(responseBalance.data.balance),
+                    };
 
-                        // BALANCE CONVERTER
-                        availableCoins[index].balance.available = convertBiggestCoinUnit(
-                            availableCoins[index].balance.available,
-                            coin.decimalPoint
-                        );
+                    // BALANCE CONVERTER
+                    availableCoins[index].balance.available = convertBiggestCoinUnit(
+                        availableCoins[index].balance.available,
+                        coin.decimalPoint
+                    );
 
-                        availableCoins[index].balance.total = convertBiggestCoinUnit(
-                            availableCoins[index].balance.total,
-                            coin.decimalPoint
-                        );
+                    availableCoins[index].balance.total = convertBiggestCoinUnit(
+                        availableCoins[index].balance.total,
+                        coin.decimalPoint
+                    );
 
-                        availableCoins[index].address = responseBalance.data.addr;
-                    } else {
-                        availableCoins[index].status = "inactive";
-                        availableCoins[index].balance = undefined;
-                    }
+                    availableCoins[index].address = responseBalance.data.addr;
                 } else {
                     availableCoins[index].address = localSeed;
                     availableCoins[index].balance = undefined;
