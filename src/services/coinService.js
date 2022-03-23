@@ -102,16 +102,16 @@ class CoinService {
                         total: parseInt(responseBalance.data.balance),
                     };
 
-                    // BALANCE CONVERTER
-                    availableCoins[index].balance.available = convertBiggestCoinUnit(
-                        availableCoins[index].balance.available,
-                        coin.decimalPoint
-                    );
+                    // // BALANCE CONVERTER
+                    // availableCoins[index].balance.available = convertBiggestCoinUnit(
+                    //     availableCoins[index].balance.available,
+                    //     coin.decimalPoint
+                    // );
 
-                    availableCoins[index].balance.total = convertBiggestCoinUnit(
-                        availableCoins[index].balance.total,
-                        coin.decimalPoint
-                    );
+                    // availableCoins[index].balance.total = convertBiggestCoinUnit(
+                    //     availableCoins[index].balance.total,
+                    //     coin.decimalPoint
+                    // );
 
                     availableCoins[index].address = responseBalance.data.addr;
                 } else {
