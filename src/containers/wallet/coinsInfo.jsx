@@ -110,7 +110,8 @@ class CoinsInfo extends React.Component {
     let balance = coin.balance.available;
     let strBalance = parseInt(balance).toLocaleString();
     let userName = user.name;
-    // let address = coin.address;
+    let address = coin.address;
+    
     return (
       <div>
         <Modal
@@ -147,7 +148,7 @@ class CoinsInfo extends React.Component {
                     <h2>{i18n.t("HELLO")}, {userName}</h2>
                   </Grid>
                   <Grid item className={style.balanceItem}>
-                    <h2>{i18n.t("WALLET_BALANCE")}</h2>
+                    <h2>{address}, {i18n.t("WALLET_BALANCE")}</h2>
                     <h3>{strBalance} </h3>
                     <div className={style.alignValues}>
                       <h3> $0.00 USD</h3>
@@ -174,7 +175,7 @@ class CoinsInfo extends React.Component {
                     <h2>{i18n.t("HELLO")}, {userName}</h2>
                   </Grid>
                   <Grid item className={style.balanceItemMobile}>
-                    <h2>{i18n.t("WALLET_BALANCE")}</h2>
+                    <h2>{address}, {i18n.t("WALLET_BALANCE")}</h2>
                     <h3>{strBalance} </h3>
                     <div className={style.alignValues}>
                       <h3> $0.00 USD</h3>
