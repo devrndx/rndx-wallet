@@ -1,3 +1,3 @@
-import EthServices from "./eth";
+import RNDXServices from "./rndx";
 
-export { EthServices };
+export { RNDXServices };
