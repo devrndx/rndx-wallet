@@ -1,4 +1,4 @@
-export const TESTNET = true;
+export const TESTNET = false;
 export const BASE_URL = TESTNET ?
     "https://app.dev.rndx-wallet.io" :
     "https://app.rndx-wallet.io";
