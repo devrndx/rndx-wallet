@@ -380,5 +380,10 @@
     "INVITE_SUCCESS_EMAIL": "Confirmed E-mail",
     "MENU_COINSALE": "Buy",
 
-    "SELECT_COIN": "Select a coin"
+    "SELECT_COIN": "Select a coin",
+    "LOCKED_WALLET": "현재 지갑은 잠금상태입니다.",
+    "EXPECTED_WITHDRAWAL_DATE": "출금예정일",
+    "WITHDRAWABLE_RATE": "출금가능비율",
+    "HELLO": "안녕하세요"
+
 }
