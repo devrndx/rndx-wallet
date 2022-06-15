@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updatePassword } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: process.env.FIREBASE_SECRET,
+    apiKey: "AIzaSyAIqChCk2TpIaK5kRbM-HjzpQysxOtSG6A",
     authDomain: "roundx-556ef.firebaseapp.com",
     projectId: "roundx-556ef",
     storageBucket: "roundx-556ef.appspot.com",
