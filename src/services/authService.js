@@ -37,9 +37,6 @@ class AuthService {
             if (error.code === 'auth/wrong-password') {
                 let notification = i18n.t("NOTIFICATION_SERVICE_INVALID_LOGIN");
                 return unauthorized(notification);
-            } else if (error.response.data.code === 401) {
-                let notification = i18n.t("NOTIFICATION_SERVICE_INVALID_LOGIN");
-                return unauthorized(notification);
             } else if (error.code === "auth/user-not-found") {
                 let notification = i18n.t("NOTIFICATION_SERVICE_INVALID_LOGIN");
                 return unauthorized(notification);
