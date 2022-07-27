@@ -10,9 +10,9 @@ import style from "../../style.css";
 // COMPONENTS
 import Loading from "../../../../components/loading";
 
-class ButtonContinue extends React.Component {
+class ButtonRegAuth extends React.Component {
   render() {
-    const { action, loading, label = i18n.t("BTN_CONFIRM"), error } = this.props;
+    const { action, loading, label = "등록", error } = this.props;
     return (
       <button
         className={!error ? style.btContinueDisable : style.btError}
@@ -24,11 +24,11 @@ class ButtonContinue extends React.Component {
   }
 }
 
-ButtonContinue.propTypes = {
+ButtonRegAuth.propTypes = {
   action: PropTypes.func.isRequired,
   label: PropTypes.string,
   loading: PropTypes.bool,
   error: PropTypes.bool
 };
 
-export default ButtonContinue;
+export default ButtonRegAuth;

@@ -14,7 +14,9 @@ const initialState = {
         username: undefined,
         email: undefined,
         password: undefined,
-        seed: undefined
+        seed: undefined,
+        d_day: undefined,
+        ratio: undefined,
     },
     twoFactor: false,
     pages: {
@@ -140,7 +142,9 @@ const user = (state = initialState, action) => {
                     username: undefined,
                     email: undefined,
                     password: undefined,
-                    seed: undefined
+                    seed: undefined,
+                    d_day: undefined,
+                    ratio: undefined,
                 },
                 loading: false
             };
@@ -168,7 +172,10 @@ const user = (state = initialState, action) => {
                     username: undefined,
                     email: undefined,
                     password: undefined,
-                    seed: undefined
+                    seed: undefined,
+                    d_day: undefined,
+                    ratio: undefined,
+
                 },
                 loading: false
             };
@@ -204,7 +211,9 @@ const user = (state = initialState, action) => {
                     phonenum: action.user.phonenum,
                     zipcode: action.user.zipcode,
                     email: action.user.email,
-                    terms: action.user.terms
+                    terms: action.user.terms,
+                    d_day: action.user.d_day,
+                    ratio: action.user.ratio,
                 }
             };
 
@@ -267,33 +276,6 @@ const user = (state = initialState, action) => {
                     link: action.link,
                     user: action.user,
                     loading: false
-                }
-            };
-
-        case "VERIFY_EMAIL_LOADING":
-            return {
-                ...state,
-                verifyEmail: {
-                    ...state.verifyEmail,
-                    loading: true
-                }
-            };
-
-        case "VERIFY_EMAIL_SUCCESS":
-            return {
-                ...state,
-                verifyEmail: {
-                    success: true,
-                    loading: false,
-                }
-            };
-
-        case "VERIFY_EMAIL_ERROR":
-            return {
-                ...state,
-                verifyEmail: {
-                    success: false,
-                    loading: false,
                 }
             };
 

@@ -19,9 +19,6 @@ class Modal extends React.Component {
     
     return (
       <div className={style.header}>
-        <div className={style.headerImage} onClick={back ? () => back() : null}>
-          {backButton}
-        </div>
         <div className={style.headerTitle}>{title}</div>
         <div
           className={style.headerImageClose}

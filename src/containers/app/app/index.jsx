@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Loadable from "react-loadable";
 import React, { Component } from "react";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import ModalBar from "../../../components/modalBar";
 
 // REDUX
 import { connect } from "react-redux";
@@ -11,7 +12,6 @@ import { connect } from "react-redux";
 import fakeDelay from "../../../components/fakeDelay";
 import Loading from "../../../components/loading";
 import Skeleton from "../../skeleton";
-import ModalBar from "../../../components/modalBar";
 
 function loading({ error }) {
   if (error) {
@@ -23,12 +23,6 @@ function loading({ error }) {
 }
 
 /* eslint-disable */
-let home = Loadable({
-  loader: () => fakeDelay(400).then(() => import("../../home")),
-  loading: loading,
-  serverSideRequirePath: path.resolve(__dirname, "../../home")
-});
-
 let wallet = Loadable({
   loader: () => fakeDelay(400).then(() => import("../../wallet")),
   loading: loading,

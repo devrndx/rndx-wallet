@@ -19,770 +19,870 @@
 3. MODAL
 */
 
-
 /* ------------------------------------------------------------------------- */
 
-
 /* 1. BOX COIN*/
-
 
 /* 1.1 BASES */
 
 :local .boxCoin {
-    margin-top: 7px;
-    margin-bottom: 7px;
-    margin-left: 10px;
-    border-radius: 8px;
-    opacity: 0.8;
-    transition: opacity 0.5s;
-    height: 60px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: 10px;
+  border-radius: 8px;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+  height: 60px;
 }
 
 :local .boxCoinDisabled {
-    -webkit-filter: grayscale(100%);
-    /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 
 :local .boxCoinActive {
-    composes: bgWhiteClear from "../../components/bases/colorBase.css";
-    composes: boxCoin;
+  composes: bgWhiteClear from "../../components/bases/colorBase.css";
+  composes: boxCoin;
 }
 
 :local .boxCoin:hover {
-    include: bgWhiteClear from "../../components/bases/colorBase.css";
-    cursor: pointer;
-    opacity: 1;
+  include: bgWhiteClear from "../../components/bases/colorBase.css";
+  cursor: pointer;
+  opacity: 1;
 }
 
 :local .contentCoins {
-    composes: bgWhiteLight from "../../components/bases/colorBase.css";
-    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.05);
-    margin-left: 1px;
+  composes: bgWhiteLight from "../../components/bases/colorBase.css";
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.05);
+  margin-left: 1px;
 }
 
 :local .boxIconCoin {
-    composes: bgWhiteClear from "../../components/bases/colorBase.css";
-    padding: 18px;
-    float: left;
-    border-radius: 8px;
+  composes: bgWhiteClear from "../../components/bases/colorBase.css";
+  padding: 18px;
+  float: left;
+  border-radius: 8px;
 }
 
 :local .iconCoin {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 :local .arrowControl {
-    justify-content: center;
-    align-items: center;
-    display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 :local .arrowPercent {
-    width: 10px;
-    margin-bottom: -8px;
+  width: 10px;
+  margin-bottom: -8px;
 }
 
 :local .arrowPercentDown {
-    composes: arrowPercent;
-    composes: clCoinBitcoin from "../../components/bases/colorBase.css";
+  composes: arrowPercent;
+  composes: clCoinBitcoin from "../../components/bases/colorBase.css";
 }
 
 :local .arrowPercentUp {
-    composes: arrowPercent;
-    composes: clBlueDefault from "../../components/bases/colorBase.css";
+  composes: arrowPercent;
+  composes: clBlueDefault from "../../components/bases/colorBase.css";
 }
 
 :local .arrowPercentDisabled {
-    padding-top: 2px;
+  padding-top: 2px;
 }
 
 :local .paddingTop8 {
-    padding-top: 8%;
+  padding-top: 8%;
 }
 
 :local .boxArrowPercent {
-    margin-top: 17px;
-    margin-left: 39px;
-    position: absolute;
+  margin-top: 17px;
+  margin-left: 39px;
+  position: absolute;
 }
 
 :local .addFavorites {
-    width: 100%;
-    margin-left: 20px;
-    height: 77px;
-    align-items: center;
-    display: flex !important;
-    color: #f05252;
+  width: 100%;
+  margin-left: 20px;
+  height: 77px;
+  align-items: center;
+  display: flex !important;
+  color: #f05252;
 }
 
 @media only screen and (max-width: 812px) {
-     :local .boxIconCoin {
-        background-color: transparent;
-        margin-left: -5px;
-    }
-     :local .boxCoinActive {
-        composes: bgWhiteClear from "../../components/bases/colorBase.css";
-        composes: boxCoin;
-        max-width: 80px;
-    }
+  :local .boxIconCoin {
+    background-color: transparent;
+    margin-left: -5px;
+  }
+  :local .boxCoinActive {
+    composes: bgWhiteClear from "../../components/bases/colorBase.css";
+    composes: boxCoin;
+    max-width: 80px;
+  }
 }
-
 
 /* 1.2 TEXTS */
 
 :local .boxLabelCoin {
-    font-size: 12px;
-    text-align: right;
-    padding-top: 12px;
-    padding-right: 5px;
-    word-wrap: break-word;
+  font-size: 12px;
+  text-align: right;
+  padding-top: 12px;
+  padding-right: 5px;
+  word-wrap: break-word;
 }
 
 :local .boxLabelCoinDisabled {
-    font-size: 12px;
-    text-align: right;
-    padding-top: 25px;
-    word-wrap: break-word;
+  font-size: 12px;
+  text-align: right;
+  padding-top: 25px;
+  word-wrap: break-word;
 }
 
 :local .labelPercent {
-    font-size: 11px;
+  font-size: 11px;
 }
-
 
 /* ------------------------------------------------------------------------- */
 
-
 /* 2. COINS INFO */
-
 
 /* 2.1 BASES */
 
 :local(.styleCoinDefalt) {
-    box-shadow: 0 2px 36px -18px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 36px -18px rgba(0, 0, 0, 0.6);
 }
 
 :local(.contentInfo) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
-:local(.coinSel) {
-    composes: styleCoinDefalt;
-    background-color: #FCFCFC;
-    border-radius: 7px;
-    text-align: center;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-}
-
-:local(.coinSel img) {
-    width: 49px;
-    height: 49px;
-    margin: 5px;
-}
-
 :local(.floatRight) {
-    height: 100%;
-    padding-left: 1.5%;
+  height: 100%;
+  padding-left: 1.5%;
 }
 
 :local(.containerInfo) {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+:local(.containerInfoBackground) {
+  display: flex;
+  justify-content: center;
+  margin: 10px 5px 5px 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  width: 300px;
+}
+
+:local(.coinInfoBox) {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #fcfcfc;
+  align-items: center;
+  width: 280px;
+  justify-content: space-around;
+  display: flex;
+  padding: 5px;
+}
+
+:local(.coinSymbolBox) {
+  justify-content: space-between;
+  background-color: #fcfcfc;
+  align-items: center;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+}
+
+:local(.coinSymbolBox img) {
+  width: 60px;
+  height: 60px;
+  margin: 0 5px 5px 0;
+}
+
+:local(.coinSel) {
+  composes: styleCoinDefalt;
+  background-color: #f6f6f6;
+  border-radius: 7px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+:local(.coinSel img) {
+  width: 49px;
+  height: 49px;
+  margin: 5px;
 }
 
 :local(.balanceItem) {
-    background-color: #FCFCFC;
-    text-align: right;
-    border-radius: 8px;
-    padding: 5px 10px;
+  background-color: #fcfcfc;
+  text-align: left;
+  border-radius: 10px;
+  padding: 2px;
+  margin-bottom: 3px;
 }
 
 :local(.balanceItemMobile) {
-    composes: balanceItem;
-    padding: 5px 10px;
-    height: 100%;
+  composes: balanceItem;
+  padding: 5px 10px;
+  height: 100%;
+  margin-top: 10px;
+  width: 290px;
+}
+:local(.balanceItemMobile h4) {
+  color: #000000;
+  margin: 0px;
 }
 
+:local(.balanceItemMobile h3) {
+  color: #000000;
+  margin: 0px;
+}
+
+:local(.alignValuesFlex) {
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 16px;
+  text-align: right;
+  display: flex;
+}
 :local(.alignValues) {
-    font-weight: bold;
-    margin-top: 15px;
-    font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 16px;
+  text-align: right;
 }
 
 :local(.coinBalanceGreen) {
-    color: #68f285;
-    display: inline;
+  color: #68f285;
+  display: inline;
 }
 
 :local(.balanceItem p) {
-    font-weight: normal;
-    font-size: 24px;
+  font-weight: normal;
+  font-size: 12px;
 }
 
 @media only screen and (max-width: 599px) {
-     :local(.coinSel img) {
-        width: 34px;
-        height: 34px;
-    }
-     :local(.coinSel h3) {
-        font-size: 14px;
-    }
-     :local(.coinSel h2) {
-        font-size: 14px;
-    }
-     :local(.styleCoinDefalt) {
-        box-shadow: none;
-    }
-     :local(.balanceItemMobile h2) {
-        font-size: 14px;
-    }
-     :local(.balanceItem p) {
-        font-size: 18px;
-    }
-     :local(.alignValues) {
-        font-size: 14px;
-    }
-     :local(.containerInfo) {
-        margin-top: 30px
-    }
+  :local(.coinSel img) {
+    width: 34px;
+    height: 34px;
+  }
+  :local(.coinSel h3) {
+    font-size: 14px;
+  }
+  :local(.coinSel h2) {
+    font-size: 14px;
+  }
+  :local(.styleCoinDefalt) {
+    box-shadow: none;
+  }
+  :local(.balanceItemMobile h2) {
+    font-size: 14px;
+  }
+  :local(.balanceItem p) {
+    font-size: 18px;
+  }
+  :local(.alignValues) {
+    font-size: 14px;
+  }
+  :local(.containerInfo) {
+    margin-top: 30px;
+  }
 }
-
 
 /* 2.2 TEXTS */
 
 :local(.coinSel h3) {
-    font-size: 19px;
-    margin: 0;
+  font-size: 19px;
+  margin: 0;
 }
 
 :local(.coinSel h2) {
-    margin: 0;
+  margin: 0;
 }
 
 :local(.balanceItem h2) {
-    margin: 0 0 15px 0;
+  margin: 0 0 15px 0;
+}
+:local(.balanceItem h4) {
+  margin: 0 0 5px 0;
 }
 
-
+:local(.addressValue h4) {
+  font-size: 10px;
+  margin: 0 5px 5px 0;
+}
 /* 2.3 BUTTONS */
 
+:local(.alignButtonsBetween) {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2%;
+}
 :local(.alignButtons) {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 2%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2%;
 }
 
 :local(.receiveButton) {
-    composes: receiveButton from "../../components/bases/buttonBase.css";
-    composes: styleCoinDefalt;
+  composes: receiveButton from "../../components/bases/buttonBase.css";
+  composes: styleCoinDefalt;
 }
 
 :local(.sentButton) {
-    composes: sentButton from "../../components/bases/buttonBase.css";
-    composes: styleCoinDefalt;
+  composes: sentButton from "../../components/bases/buttonBase.css";
+  composes: styleCoinDefalt;
+  width: 300px;
+  margin: 5px 1% 10px 1%;
 }
-
+:local(.sentButtonOnPopUp) {
+  composes: sentButton from "../../components/bases/buttonBase.css";
+  composes: styleCoinDefalt;
+  width: 300px;
+}
 :local(.sentButtonMobile) {
-    composes: sentButton;
-    padding: 0;
-    height: 40px;
+  composes: sentButton;
+  padding: 0;
+  height: 40px;
 }
 
 :local(.receiveButtonMobile) {
-    composes: receiveButton;
-    padding: 0;
-    height: 40px;
+  composes: receiveButton;
+  padding: 0;
+  height: 40px;
 }
 
-
+:local(.infoChangeButtonOnPopUp) {
+  composes: infoChangeButton from "../../components/bases/buttonBase.css";
+  composes: styleCoinDefalt;
+  width: 300px;
+}
 /* ------------------------------------------------------------------------- */
 
-
 /* 3. HISTORY */
-
 
 /* 3.1 BASES */
 
 :local(.displayAlign) {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 :local(.containerTransactions) {
-    composes: displayAlign;
+  composes: displayAlign;
 }
 
 :local(.contentTransactions) {
-    border-radius: 8px;
-    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.05);
-    background-color: #FCFCFC;
-    max-height: 55vh;
-    overflow: auto;
-    padding-bottom: 100px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.05);
+  background-color: #fcfcfc;
+  max-height: 55vh;
+  overflow: auto;
+  padding-bottom: 100px;
 }
 
 :local(.contentTransactions::-webkit-scrollbar-thumb) {
-    background-color: #68f285;
+  background-color: #68f285;
 }
 
 :local(.typeItems) {
-    text-align: center;
-    padding: 10px 0;
-    margin: auto auto;
+  text-align: center;
+  padding: 10px 0;
+  margin: auto auto;
 }
 
 :local(.itemHistorico) {
-    display: flex;
-    border: 0;
-    border-bottom: 1px;
-    border-color: #3a1d71;
-    border-style: solid;
-    align-items: center;
-    cursor: pointer;
-    user-select: none;
-    margin: 0 20px;
-    opacity: 1;
+  display: flex;
+  border: 0;
+  border-bottom: 1px;
+  border-color: #3a1d71;
+  border-style: solid;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  margin: 0 20px;
+  opacity: 1;
 }
 
 :local(.itemDataHistorico) {
-    background-color: #381e67;
-    display: flex;
-    cursor: default;
-    font-size: 9px;
+  background-color: #e0e0e0;
+  display: flex;
+  cursor: default;
+  font-size: 9px;
 }
 
 :local(.toggleHistory) {
-    display: none;
-    transition: 2s;
+  display: none;
+  transition: 2s;
 }
 
 :local(.alignItemsHeaderHistory) {
-    composes: textDefault from "../../components/bases/textBase.css";
-    padding: 15px 0;
-    font-weight: bold;
+  composes: textDefault from "../../components/bases/textBase.css";
+  padding: 15px 0;
+  font-weight: bold;
 }
 
 :local(.alignTimeInValueHistory) {
-    composes: displayAlign;
+  composes: displayAlign;
 }
 
 :local(.opacityItem) {
-    composes: itemHistorico;
-    opacity: 0.4;
+  composes: itemHistorico;
+  opacity: 0.4;
 }
 
 @media only screen and (max-width: 599px) {
-     :local(.nivel3) {
-        padding-bottom: 60px;
-    }
-     :local(.itemHistorico) {
-        margin: 0;
-    }
-     :local(.contentTransactions) {
-        box-shadow: none;
-    }
+  :local(.nivel3) {
+    padding-bottom: 60px;
+  }
+  :local(.itemHistorico) {
+    margin: 0;
+  }
+  :local(.contentTransactions) {
+    box-shadow: none;
+  }
 }
-
 
 /* 3.2 TEXTS */
 
 :local(.historyTitle) {
-    text-align: center;
-    font-size: 16px;
-    padding-left: 25px;
+  text-align: center;
+  font-size: 16px;
+  padding-left: 25px;
 }
 
 :local(.titleBlockExplorer) {
-    padding: 10px 15px;
-    margin: auto auto;
-    font-weight: bold;
+  padding: 10px 15px;
+  margin: auto auto;
+  font-weight: bold;
 }
 
 :local(.descriptionHistory) {
-    padding: 10px 15px;
-    font-size: 12px;
+  padding: 10px 15px;
+  font-size: 12px;
 }
 
 :local(.descriptionHistory a) {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 :local(.notFound) {
-    text-align: center;
-    padding-top: 5%;
+  text-align: center;
+  padding-top: 5%;
 }
 
 :local(.valueHistory) {
-    text-align: right;
-    padding-right: 15px;
+  text-align: right;
+  padding-right: 15px;
 }
 
 :local(.timeInValueHistory) {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }
 
 :local(.sentHistory) {
-    composes: clError from "../../components/bases/colorBase.css";
+  composes: clError from "../../components/bases/colorBase.css";
 }
 
 :local(.sentButton) {
-    composes: submitButton from "../../components/bases/buttonBase.css";
-    composes: styleCoinDefalt;
+  composes: submitButton from "../../components/bases/buttonBase.css";
+  composes: styleCoinDefalt;
 }
 
 :local(.receivedHistory) {
-    composes: clBlueLight from "../../components/bases/colorBase.css";
+  composes: clBlueLight from "../../components/bases/colorBase.css";
 }
 
 :local(.timeHistory) {
-    font-weight: bold;
-    text-align: center;
+  font-weight: bold;
+  text-align: center;
 }
 
 :local(.sentButtonMobile) {
-    composes: submitButton from "../../components/bases/buttonBase.css";
-    composes: styleCoinDefalt;
-    height: 40px;
+  composes: submitButton from "../../components/bases/buttonBase.css";
+  composes: styleCoinDefalt;
+  height: 40px;
 }
 
 :local(.dateHistory) {
-    font-size: 9px;
+  font-size: 9px;
 }
 
 :local(.idTransactionHistory) {
-    padding: 0px 15px;
-    font-size: 9px;
+  padding: 0px 15px;
+  font-size: 9px;
 }
 
 :local(.fromTransactionHistory) {
-    composes: clError from "../../components/bases/colorBase.css";
-    padding: 0px 15px;
-    font-size: 9px;
+  composes: clError from "../../components/bases/colorBase.css";
+  padding: 0px 15px;
+  font-size: 9px;
 }
 
 :local(.forTransactionHistory) {
-    composes: clBlueLight from "../../components/bases/colorBase.css";
-    padding: 0px 15px;
-    font-size: 9px;
+  composes: clBlueLight from "../../components/bases/colorBase.css";
+  padding: 0px 15px;
+  font-size: 9px;
 }
 
 @media only screen and (max-width: 599px) {
-     :local(.descriptionHistory) {
-        font-size: 9px;
-    }
-     :local(.valueHistory) {
-        padding-right: 10px;
-    }
+  :local(.descriptionHistory) {
+    font-size: 9px;
+  }
+  :local(.valueHistory) {
+    padding-right: 10px;
+  }
 }
-
 
 /* 3.2 ICONS */
 
 :local(.refleshIcon) {
-    composes: displayAlign;
-    cursor: pointer;
-    background-color: #FCFCFC;
-    border-radius: 20px;
-    padding: 6px;
-    float: right;
-    align-content: center;
+  composes: displayAlign;
+  cursor: pointer;
+  background-color: #fcfcfc;
+  border-radius: 20px;
+  padding: 6px;
+  float: right;
+  align-content: center;
 }
 
-
 /* ------------------------------------------------------------------------- */
-
 
 /* 3. MODAL */
 
 :local .baseStep {
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: center;
-    align-self: center;
-    width: 100%;
-    padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  align-self: start;
+  padding-top: 30px;
 }
 
 :local .modalBox {
-    width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    color: #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #000000;
+}
+:local(.modalBoxSubContainer) {
+  margin: auto;
+  width: 300px;
+  padding: 0px;
+  /* margin: 10px, 5px, 5px, 5px; */
+  background-color: #fcfcfc;
+  justify-content: center;
+  align-items: flex-start;
 }
 
+:local(.modalBoxSubTitle) {
+  margin-top: 5px;
+  padding-left: 5px;
+  height: 30px;
+  width: 290px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+:local(.modalBoxValueContainer) {
+  margin: 0px;
+  width: 300px;
+  height: 30px;
+  justify-content: space-between;
+}
+
+:local(.modalBoxSubContainer img) {
+  margin: auto;
+  padding: 50px;
+}
 @media only screen and (max-width: 400px) {
-     :local .modalBox {
-        font-size: 12px;
-    }
-     :local .baseStep {
-        padding: 30px 0;
-    }
-     :local .boxReceive .address {
-        font-size: 14px;
-    }
+  :local .modalBox {
+    font-size: 12px;
+  }
+  :local .baseStep {
+    padding: 30px 0;
+  }
+  :local .boxReceive .address {
+    font-size: 14px;
+  }
 }
 
 @media only screen and (min-width: 1279px) {
-     :local .modalBox {
-        width: 35vw;
-    }
+  :local .modalBox {
+    width: 35vw;
+  }
 }
 
 :local .boxQr {
-    composes: modalBox;
-    text-align: -webkit-center;
-    border-bottom: solid 2px rgba(0, 0, 0, 0.2);
-    padding-bottom: 0;
+  composes: modalBox;
+  text-align: -webkit-center;
+  border-bottom: solid 2px rgba(0, 0, 0, 0.2);
+  padding-bottom: 0;
 }
 
 :local .totalConfirm {
-    font-size: 18px;
-    font-weight: 700;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 :local .addressConfirm {
-    composes: clBlueDefault from "../../components/bases/colorBase.css";
-    font-weight: 700;
+  composes: clBlueDefault from "../../components/bases/colorBase.css";
+  font-weight: 700;
 }
 
 :local .qrCodeBox {
-    width: 100%;
-    height: 100%;
-    text-align: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
 :local .qrCode {
-    max-width: 400px;
+  max-width: 400px;
 }
 
 :local .modalBox .hoverShow {
-    opacity: 0.5;
-    transition: opacity 0.3s;
+  opacity: 0.5;
+  transition: opacity 0.3s;
 }
 
 :local .modalBox:hover .hoverShow {
-    opacity: 1;
+  opacity: 1;
 }
 
 :local .bt {
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  height: 40px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 :local(.btContinue) {
-    composes: buttonEnable from "../../components/bases/buttonBase.css";
-    composes: bt;
+  composes: buttonEnable from "../../components/bases/buttonBase.css";
+  composes: bt;
 }
 
 :local(.btError) {
-    composes: buttonGeneral from "../../components/bases/buttonBase.css";
-    composes: bgError from "../../components/bases/colorBase.css";
-    composes: bt;
+  composes: buttonGeneral from "../../components/bases/buttonBase.css";
+  composes: bgError from "../../components/bases/colorBase.css";
+  composes: bt;
 }
 
 :local(.btContinueDisable) {
-    composes: buttonBorderWhite from "../../components/bases/buttonBase.css";
-    composes: bt;
+  composes: buttonBorderWhite from "../../components/bases/buttonBase.css";
+  composes: bt;
 }
 
 :local .boxDecription {
-    margin-bottom: 5%;
+  margin-bottom: 5%;
 }
 
 :local .inputClear {
-    composes: inputTextDefault from "../../components/bases/inputBase.css";
-    background: transparent;
-    border-bottom: solid 1px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    max-width: 500px;
-    color: #68f285;
-    margin: 0px;
+  composes: inputTextDefault from "../../components/bases/inputBase.css";
+  background: transparent;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 500px;
+  color: #000000;
+  margin: 0px;
+  font-size: 10px;
 }
-
+:local .inputClearAmount {
+  composes: inputTextDefault from "../../components/bases/inputBase.css";
+  background: transparent;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 500px;
+  color: #000000;
+  margin: 0px;
+  font-size: 13px;
+}
 :local .boxPercent {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 :local .boxPercent span {
-    display: block;
-    border: solid 1px rgba(0, 0, 0, 0.5);
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 3px;
-    margin-right: 3px;
-    opacity: 0.5;
-    font-size: 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    opacity: 0.8;
-    transition: 0.3s;
+  display: block;
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 3px;
+  margin-right: 3px;
+  opacity: 0.5;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 :local .boxPercent span:hover {
-    opacity: 1;
-    border-color: #fff;
+  opacity: 1;
+  border-color: #fff;
 }
 
 :local .boxFee {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 :local .labelFee {
-    display: block;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 12px;
-    cursor: pointer;
-    opacity: 0.8;
-    transition: 0.3s;
+  display: block;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 :local .labelFee:hover {
-    opacity: 1;
-    border-bottom-width: 3px;
-    padding-top: 3px;
+  opacity: 1;
+  border-bottom-width: 3px;
+  padding-top: 3px;
 }
 
 :local .greenLabelFee {
-    composes: labelFee;
-    border-bottom: solid 1px greenyellow;
+  composes: labelFee;
+  border-bottom: solid 1px greenyellow;
 }
 
 :local .yellowLabelFee {
-    composes: labelFee;
-    border-bottom: solid 1px orange;
+  composes: labelFee;
+  border-bottom: solid 1px orange;
 }
 
 :local .redLabelFee {
-    composes: labelFee;
-    border-bottom: solid 1px red;
+  composes: labelFee;
+  border-bottom: solid 1px red;
 }
 
 :local .textHelp {
-    opacity: 0.3;
-    font-size: 14px;
-    margin-bottom: 50px;
+  opacity: 0.3;
+  font-size: 14px;
+  margin-bottom: 50px;
 }
 
 :local .confirmFee {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    font-size: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 10px;
 }
 
 :local .txtamount {
-    composes: inputTextDefault from "../../components/bases/inputBase.css";
-    background: transparent;
-    font-size: 42px;
-    text-align: center;
+  composes: inputTextDefault from "../../components/bases/inputBase.css";
+  background: transparent;
+  font-size: 42px;
+  text-align: center;
 }
 
 :local .txtamount::placeholder {
-    font-size: 42px;
-    text-align: center;
+  font-size: 42px;
+  text-align: center;
 }
 
 :local(.inputTextDefault) {
-    composes: inputTextDefault from "../../components/bases/inputBase.css";
-    max-width: 260px;
+  composes: inputTextDefault from "../../components/bases/inputBase.css";
+  max-width: 260px;
 }
 
 :local(.processInfo) {
-    padding-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 :local .modalIconCoin {
-    max-width: 50px;
-    margin-bottom: 20px;
+  max-width: 50px;
+  margin-bottom: 20px;
 }
 
 :local .errorString {
-    composes: clError from "../../components/bases/colorBase.css";
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 40px;
+  composes: clError from "../../components/bases/colorBase.css";
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 40px;
 }
 
 :local .boxReceive {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 :local .boxReceive .qrCodeReceive {
-    padding-top: 15%;
-    width: 100%;
-    text-align: center;
+  padding-top: 15%;
+  width: 100%;
+  text-align: center;
 }
 
 :local .boxReceive .bgQrCode {
-    border-radius: 48px;
-    background-color: #fff;
-    padding: 30px 40px 30px 40px;
-    box-shadow: inset 0 1px 8px 0 #4b2c82;
+  border-radius: 48px;
+  background-color: #fff;
+  padding: 30px 40px 30px 40px;
+  box-shadow: inset 0 1px 8px 0 #4b2c82;
 }
 
 :local .boxReceive .address {
-    color: #68f285;
-    text-align: center;
+  color: #68f285;
+  text-align: center;
 }
 
 :local .boxReceive .qrMessage {
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
 }
 
 :local .boxReceive .spacingBox {
-    align-items: center;
-    padding: 5% 2% 2% 2%;
-    max-width: 90%;
-    margin-left: 20px;
-    margin-right: 20px;
+  align-items: center;
+  padding: 5% 2% 2% 2%;
+  max-width: 90%;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 :local .boxReceive .buttonReceive {
-    text-align: center;
-    opacity: 0.15;
+  text-align: center;
+  opacity: 0.15;
 }
 
 :local .boxReceive .buttonReceive:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 :local .boxReceive span {
-    border: none;
-    background: transparent;
-    color: #fff;
-    font-size: 9.7pt;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 9.7pt;
 }
 
 :local .buttonReceiveImgShare {
-    width: 38px;
+  width: 38px;
 }

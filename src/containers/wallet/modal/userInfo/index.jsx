@@ -5,14 +5,12 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 // COMPONENTS
-import SendBox from "./sendBox"
-import BoxResult from "./boxResult";
-import BoxResultError from "./boxResultError";
+import UserConfigure from "./userConfigure";
 
 // STYLE
 import style from "../../style.css";
 
-class SendModal extends React.Component {
+class UserConfigureModel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,9 +20,7 @@ class SendModal extends React.Component {
 
   renderContent = () => {
     let { modal, wallet } = this.props;
-    if (modal.step === 0) return <SendBox coin={wallet.selectedCoin} />;
-    if (modal.step === 1) return <BoxResult coin={wallet.selectedCoin} />;
-    if (modal.step === 2) return <BoxResultError coin={wallet.selectedCoin} />;
+    return <UserConfigure coin={wallet.selectedCoin} />;
   };
 
   render() {
@@ -32,7 +28,7 @@ class SendModal extends React.Component {
   }
 }
 
-SendModal.propTypes = {
+UserConfigureModel.propTypes = {
   modal: PropTypes.object.isRequired,
   wallet: PropTypes.object.isRequired,
 };
@@ -42,4 +38,4 @@ const mapSateToProps = (store) => ({
   modal: store.wallet.modal,
 });
 
-export default connect(mapSateToProps, null)(SendModal);
+export default connect(mapSateToProps, null)(UserConfigureModel);

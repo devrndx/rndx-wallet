@@ -13,37 +13,27 @@ import TransactionService from "../../../services/transactionService";
 
 const coinService = new CoinService();
 const userService = new UserService();
-const transactionService = new TransactionService();
 
 export function* loadGeneralInfo(action) {
     try {
         let token = yield call(getAuthToken);
         let seed = yield call(getUserSeedWords);
 
+        let pwd = action.password;
+        if (!pwd) {
+            pwd = getUserPassword()
+        }
+
         let responseCoins = yield call(
             coinService.getGeneralInfo,
             token,
-            decryptAes(seed, action.password)
+            decryptAes(seed, pwd)
         );
 
         let responseUser = yield call(userService.getUser, token);
 
         setAuthToken(responseCoins.token);
         delete responseCoins.token;
-
-        // let responseAlias = yield call(
-        //     transactionService.getAliases,
-        //     responseCoins.lunes.address
-        // );
-
-        // if (responseAlias.length > 0) {
-        //     let firstAlias = responseAlias[0].split(":")[2];
-
-        //     yield put({
-        //         type: "SET_SKELETON_ALIAS_ADDRESS",
-        //         alias: firstAlias
-        //     });
-        // }
 
         yield put({
             type: "SET_USER_INFO",
@@ -57,10 +47,12 @@ export function* loadGeneralInfo(action) {
                 street: undefined,
                 profilePicture: undefined,
                 name: responseUser.data.name,
-                phonenum: undefined,
+                phonenum: responseUser.data.phonenumber,
                 username: undefined,
                 zipcode: undefined,
-                email: undefined
+                email: responseUser.data.email,
+                d_day: responseUser.data.destDateTime,
+                ratio : responseUser.data.ratio
             }
         });
 
@@ -88,10 +80,40 @@ export function* loadWalletInfo(action) {
         const token = yield call(getAuthToken);
         const seed = yield call(getUserSeedWords);
         const defaultCrypto = yield call(getDefaultCrypto);
+
+        let pwd = action.password;
+        if (!pwd) {
+            let token = yield call(getAuthToken);
+            let responseUser = yield call(userService.getUser, token);
+
+            yield put({
+                type: "SET_USER_INFO",
+                user: {
+                    birthday: undefined,
+                    city: undefined,
+                    country: undefined,
+                    terms: undefined,
+                    phone: undefined,
+                    state: undefined,
+                    street: undefined,
+                    profilePicture: undefined,
+                    name: responseUser.data.name,
+                    phonenum: responseUser.data.phonenumber,
+                    username: undefined,
+                    zipcode: undefined,
+                    email: responseUser.data.email,
+                    d_day: responseUser.data.destDateTime,
+                    ratio : responseUser.data.ratio
+                }
+            });
+
+            pwd = getUserPassword()
+        }
+
         let responseCoins = yield call(
             coinService.getGeneralInfo,
             token,
-            decryptAes(seed, action.password)
+            decryptAes(seed, pwd)
         );
 
         setAuthToken(responseCoins.token);
@@ -123,26 +145,6 @@ export function* loadWalletInfo(action) {
         });
         yield put({
             type: "SET_ASSET_LOADING"
-        });
-
-        return;
-    } catch (error) {
-        yield put({
-            type: "CHANGE_SKELETON_ERROR_STATE",
-            state: true
-        });
-        yield put(internalServerError());
-    }
-}
-
-export function* availableCoins() {
-    try {
-        let token = yield call(getAuthToken);
-        let response = yield call(coinService.getAvailableCoins, token);
-
-        yield put({
-            type: "GET_AVAILABLE_COINS",
-            coins: response.data.data.coins
         });
 
         return;
