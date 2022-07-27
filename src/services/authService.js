@@ -35,25 +35,10 @@ class AuthService {
 
         } catch (error) {
             if (error.code === 'auth/wrong-password') {
-                let response = await axios.post(
-                    BASE_URL + "/users/login", {
-                        login: email,
-                        password: encryptMd5(password),
-                        token: ""
-                    },
-                    HEADER_REQUEST
-                );
-
-                if (response.data.status.code === 200) {
-                    // Try to verification and reset  
-                } else if (response.data.code === 401) {
-                    let notification = i18n.t("NOTIFICATION_SERVICE_INVALID_LOGIN");
-                    return unauthorized(notification);
-                }
-
+                let notification = i18n.t("NOTIFICATION_SERVICE_INVALID_LOGIN");
+                return unauthorized(notification);
             } else if (error.response.data.code === 401) {
                 let notification = i18n.t("NOTIFICATION_SERVICE_INVALID_LOGIN");
-
                 return unauthorized(notification);
             }
 

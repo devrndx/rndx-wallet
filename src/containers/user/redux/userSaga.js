@@ -6,10 +6,10 @@ import {
     getUserSeedWords,
     getUsername,
     setUserData,
-    clearAll
+    clearAll,
+    setUserPassword
 } from "../../../utils/localStorage";
 import { encryptHmacSha512Key } from "../../../utils/cryptography";
-import { HEADER_RESPONSE } from "../../../constants/apiBaseUrl";
 import {
     internalServerError,
     modalSuccess,
@@ -56,8 +56,9 @@ export function* authenticateUser(action) {
         });
 
         yield setUserSeedWords(response.data.seed, action.password);
-
         let seed = yield call(getUserSeedWords);
+
+        yield setUserPassword(action.password, action.password);
 
         yield put({
             type: "SET_USER_SEED",
@@ -236,7 +237,8 @@ export function* resetUser(action) {
 
         let response = yield call(userService.resetPass, { email: action.login });
 
-        if (response.data.code === 200) {
+
+        if (response.code === 200) {
             yield put({
                 type: "POST_USER_RESET_USER",
                 page: 1
@@ -386,33 +388,6 @@ export function* updateUserPasswordSaga(action) {
         yield put({
             type: changeLoadingState
         });
-        yield put(internalServerError());
-    }
-}
-
-export function* verifyEmailSaga(data) {
-    try {
-        yield put({
-            type: "VERIFY_EMAIL_LOADING"
-        });
-
-        const response = yield call(userService.verifyEmail, data.hash);
-
-        if (response.code === 200) {
-            yield put({
-                type: "VERIFY_EMAIL_SUCCESS"
-            });
-        } else if (response.code === 405) {
-            yield put({
-                type: "VERIFY_EMAIL_SUCCESS"
-            });
-        } else {
-            yield put({
-                type: "VERIFY_EMAIL_ERROR"
-            });
-        }
-        return;
-    } catch (error) {
         yield put(internalServerError());
     }
 }

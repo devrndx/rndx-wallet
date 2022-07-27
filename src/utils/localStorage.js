@@ -22,9 +22,20 @@ export const setUserSeedWords = (seed, password) => {
     return;
 };
 
+export const setUserPassword = (pwd, password) => {
+    // setUserData({ password: encryptAes(pwd, password) });
+    setUserData({ password: pwd });
+    return;
+};
+
 export const getUserSeedWords = () => {
     let userData = getUserData();
     return userData.secretWord;
+};
+
+export const getUserPassword = () => {
+    let userData = getUserData();
+    return userData.password;
 };
 
 export const compareUserSeedWords = seed => {

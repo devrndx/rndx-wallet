@@ -14,19 +14,19 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com/Lunes-platform/Viserion_Project.git"
+        "url": "git@github.com:devrndx/rndx-wallet.git"
     },
     "keywords": [
-        "Lunes",
+        "RNDX",
         "Wallet",
         "Web"
     ],
-    "author": "Lunes Platform",
+    "author": "RNDX Platform",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/Lunes-platform/Viserion_Project/issues"
+        "url": "https://github.com/devrndx/rndx-wallet/issues"
     },
-    "homepage": "https://github.com/Lunes-platform/Viserion_Project#readme",
+    "homepage": "https://github.com/devrndx/rndx-wallett#readme",
     "pre-commit": [
         "precommit-msg",
         "lint"
@@ -98,12 +98,11 @@
         "i18next-browser-languagedetector": "^2.2.0",
         "libphonenumber-js": "^1.7.9",
         "lodash": "^4.17.4",
-        "lunes-address-validator": "^0.3.9",
-        "lunes-js-api": "^0.31.8",
         "prop-types": "^15.6.2",
         "qrcode.react": "^0.8.0",
         "quagga": "^0.12.1",
         "react": "^16.4.1",
+        "react-copy-to-clipboard": "^5.1.0",
         "react-dom": "^16.4.1",
         "react-fileupload-progress": "^0.4.1",
         "react-i18next": "^7.7.0",

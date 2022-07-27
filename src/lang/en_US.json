@@ -79,7 +79,7 @@
     "PLACEHOLDER_EX_ADDRESS": "Ex: 37n724hxf4XnCFfJFnCzj4TbYryoizdfGCV",
     "SETTINGS_USER_ADDRESS": "Address",
     "MESSAGE_INVALID_ADDRESS": "Invalid Address",
-    "MODAL_SEND_ADDRESS": "Enter the wallet address",
+    "MODAL_SEND_ADDRESS": "Enter the target wallet address",
     "MODAL_SEND_QR_CODE_ADDRESS": "Send Scanning QR Code",
     "MODAL_SEND_TO_ADDRESS": " to the address ",
     "2FA_INSTRUCTIONS": "Confirm the code provided in google authenticator and enter the 6 digits below",
@@ -708,7 +708,12 @@
     "P2P_ADDRESS_TO_SEND": "Address to send",
     "SELECT_COIN": "Select a coin",
     "LOCKED_WALLET": "The wallet is currently locked.",
-    "EXPECTED_WITHDRAWAL_DATE": "Expected withdrawal date",
-    "WITHDRAWABLE_RATE": "Withdrawable rate",
-    "HELLO": "Hello"
+    "EXPECTED_WITHDRAWAL_DATE": "Expected Withdrawal Date",
+    "WITHDRAWABLE_RATE": "Withdrawable Rate",
+    "HELLO": "Hello",
+    "ADDRESS_COPY_SUCCESS": "The wallet address was copied.",
+    "TRANSFER_FEE": "Fee",
+    "TRANSFER_AMOUNT": "Amount",
+    "TRANSFER_AVAILABLE_AMOUNT": "Number of Withdrawals Available",
+    "REQUEST_TRANSFER": "Success to send token. After few minutes, confirm market!!"
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import PropTypes from "prop-types";
 
 // REDUX
@@ -6,6 +7,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import {
   setWalletSendModalOpen,
+  setUserConfigureOpen,
   setWalletModalStep,
   setWalletLoading,
   resetModalSend,
@@ -26,6 +28,7 @@ import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 //COMPONENTS
 import Modal from "../../components/modal";
 import SendModal from "./modal/sendModal/";
+import UserConfigureModel from "./modal/userInfo/";
 
 // UTILS
 import i18n from "../../utils/i18n";
@@ -35,7 +38,7 @@ class CoinsInfo extends React.Component {
     super();
     this.state = {
       modalSend: false,
-      modalReceive: false,
+      modalUser: false,
     };
   }
 
@@ -100,7 +103,8 @@ class CoinsInfo extends React.Component {
   };
 
   render() {
-    let { user, coins, wallet } = this.props;
+    let { setWalletSendModalOpen, setUserConfigureOpen, user, coins, wallet } =
+      this.props;
     let step = wallet.modal.step;
     let selectedCoin = wallet.selectedCoin ? wallet.selectedCoin : "RNDX";
 
@@ -112,10 +116,14 @@ class CoinsInfo extends React.Component {
     let curTokenPrice = parseFloat(coin.price).toFixed(2);
     let curTotalPrice = coin.totalPrice.toFixed(2).toLocaleString();
     let userName = user.name;
+    const _day = 1000 * 60 * 60 * 24;
+    const absDay = user.d_day.slice(0, 16).replace('T', ' ') + " GMT+0900";
+    let d_day = new Date(user.d_day) - new Date(Date.now());
+    let destDays = d_day > 0 ? Math.floor(d_day/_day) : 0;
+    let ratio = user.ratio * 10;
     let address = coin.address;
-    
     return (
-      <div>
+      <div align="center">
         <Modal
           title={i18n.t("WALLET_MODAL_SEND_TITLE")}
           content={<SendModal />}
@@ -128,79 +136,79 @@ class CoinsInfo extends React.Component {
           }
         />
 
-        <Grid container className={style.containerInfo}>
-          <Grid item xs={11} sm={7} md={6} className={style.contentInfo}>
-            <Grid item xs={4} className={style.coinSel}>
-              <Grid item>
-                <h3>{coin.name.toUpperCase()}</h3>
-                <img
-                  src={"./images/icons/coins/" + coin.abbreviation + ".png"}
-                  className={style.iconCoinSelected}
-                />
-                <div className={style.percentageCoinSelected}>
-                  <h3> $ {curTokenPrice}</h3>
+        <Modal
+          title={i18n.t("SETTINGS_USER")}
+          content={<UserConfigureModel />}
+          show={wallet.modalUser.open}
+          close={() => setUserConfigureOpen()}
+        />
+
+        <Grid container className={style.containerInfoBackground}>
+          <Grid item className={style.coinInfoBox}>
+            <Grid item className={style.coinSymbolBox}>
+              <img src={"./images/icons/coins/" + coin.abbreviation + ".png"} />
+              <h4> $ {curTokenPrice}</h4>
+            </Grid>
+
+            <Grid item>
+              <Grid item className={style.balanceItem}>
+                <div className={style.alignValuesFlex}>
+                  <h4>{i18n.t("HELLO")},</h4>
+                  <h4> {userName}</h4>
+                  <a
+                    // onClick={() => alert(i18n.t("LOCKED_WALLET"))}
+                    onClick={() =>
+                      setUserConfigureOpen()
+                    }
+                  >
+                    <img
+                      src={"./images/icons/general/setting@1x.png"}
+                      width="24"
+                      height="24"
+                    />
+                  </a>
+                </div>
+
+                <div className={style.alignValues}>
+                  <hr />
+                  <h4>{i18n.t("WALLET_BALANCE")}</h4>
+                  <h4>{strBalance} </h4>
+                  <hr />
+                  <h4>USDT Value</h4>
+                  <h4> $ {curTotalPrice}</h4>
+                  <hr />
                 </div>
               </Grid>
             </Grid>
-
-            <Hidden xsDown>
-              <Grid item xs={8} className={style.floatRight}>
-                <Grid item className={style.floatRight}>
-                  <Grid item className={style.balanceItem}>
-                    <h2>{i18n.t("HELLO")}, {userName}</h2>
-                  </Grid>
-                  <Grid item className={style.balanceItem}>
-                    <h2>{address}, {i18n.t("WALLET_BALANCE")}</h2>
-                    <h3>{strBalance} </h3>
-                    <div className={style.alignValues}>
-                      <h3> $ {curTotalPrice} USD</h3>
-                    </div>
-                    <h3>{i18n.t("EXPECTED_WITHDRAWAL_DATE")} D-</h3>
-                    <h3>{i18n.t("WITHDRAWABLE_RATE")} : -%</h3>
-                  </Grid>
-                  <Grid item xs={11} className={style.alignButtons}>
-                    <button
-                      className={style.sentButton}
-                      onClick={() => alert(i18n.t("LOCKED_WALLET"))}
-                    >
-                      {i18n.t("BTN_SEND")}
-                    </button>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Hidden>
-
-            <Hidden smUp>
-              <Grid item xs={8} className={style.contentInfo}>
-                <Grid item className={style.floatRight}>
-                  <Grid item className={style.balanceItemMobile}>
-                    <h2>{i18n.t("HELLO")}, {userName}</h2>
-                  </Grid>
-                  <Grid item className={style.balanceItemMobile}>
-                    <h2>{address}, {i18n.t("WALLET_BALANCE")}</h2>
-                    <h3>{strBalance} </h3>
-                    <div className={style.alignValues}>
-                      <h3> $ {curTotalPrice} USD</h3>
-                    </div>
-                    <h3>{i18n.t("EXPECTED_WITHDRAWAL_DATE")} D-</h3>
-                    <h3>{i18n.t("WITHDRAWABLE_RATE")} : -%</h3>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Hidden>
           </Grid>
-
-          <Hidden smUp>
-            <Grid item xs={11} className={style.alignButtons}>
-              <button
-                className={style.sentButtonMobile}
-                onClick={() => alert(i18n.t("LOCKED_WALLET"))}
+          <Grid item className={style.balanceItemMobile}>
+            <div className={style.alignButtonsBetween}>
+              <h3>{i18n.t("SETTINGS_USER_ADDRESS")}</h3>
+              <CopyToClipboard
+                text={coin.address}
+                onCopy={() => alert(i18n.t("ADDRESS_COPY_SUCCESS"))}
               >
-                {i18n.t("BTN_SEND")}
-              </button>
-            </Grid>
-          </Hidden>
+                <img src={"./images/icons/general/copy@1.png"} />
+              </CopyToClipboard>
+            </div>
+            <div className={style.addressValue}>
+              <h4>{address}</h4>
+              <hr />
+            </div>
+            <h3>{i18n.t("WITHDRAWABLE_RATE")}</h3>
+            <h4>{ratio} %</h4>
+            <hr />
+            <h3>{i18n.t("EXPECTED_WITHDRAWAL_DATE")}</h3>
+            <h4>D - {destDays} ({absDay})</h4>
+            <hr />
+          </Grid>
         </Grid>
+        <button
+          className={style.sentButton}
+          onClick={() => setWalletSendModalOpen()}
+        >
+          {i18n.t("BTN_SEND")}
+        </button>
       </div>
     );
   }
@@ -214,6 +222,7 @@ CoinsInfo.propTypes = {
   setWalletLoading: PropTypes.func.isRequired,
   setWalletModalStep: PropTypes.func.isRequired,
   setWalletSendModalOpen: PropTypes.func.isRequired,
+  setUserConfigureOpen: PropTypes.func.isRequired,
   errorRequest: PropTypes.func,
   resetModalSend: PropTypes.func,
 };
@@ -231,6 +240,7 @@ const mapDispatchToProps = (dispatch) =>
       setWalletLoading,
       setWalletModalStep,
       setWalletSendModalOpen,
+      setUserConfigureOpen,
       errorRequest,
       resetModalSend,
     },

@@ -3,12 +3,8 @@ export const BASE_URL = TESTNET ?
     "https://app.dev.rndx-wallet.io" :
     "https://app.rndx-wallet.io";
 
-export const LUNESNODE_URL = TESTNET ?
-    "https://lunesnode-testnet.lunes.io" :
-    "https://lunesnode.lunes.io";
-
 export const TETHER_URL = "https://api.omniwallet.org";
-export const HEADER_RESPONSE = "x-amzn-remapped-authorization";
+export const HEADER_RESPONSE = "Authorization";
 
 export const HEADER_REQUEST = {
     headers: {
@@ -28,20 +24,11 @@ export const HEADER_REQUEST_FORM = {
 
 export const API_HEADER = {
     headers: {
-        key: "IIP0X6S4Ui7z0lTfTkeLO6te2ZmyxOJ1fNeuoIC9"
+        key: ""
     }
 };
 
-
-export const chat = {
-    ENV: 'PROD', //DEV || PROD
-    CHAT_DEV: 'http://localhost:6005',
-    CHAT_PROD: 'https://chat.luneswallet.app',
-    getUrl: function(componentId, namespace, adId, adOwnerId, buyerId) {
-        return `${this['CHAT_'+this.ENV]}/serve/chat?root=${componentId}&namespace=${namespace}&adId=${adId}&adOwnerId=${adOwnerId}&buyerId=${buyerId}`
-    }
-}
 export const blockexplorer = {
-    lunes: TESTNET ?
-        "https://blockexplorer-testnet.lunes.io/tx/" : "https://blockexplorer.lunes.io/tx/",
+    RNDX: TESTNET ?
+        "https://baobab.scope.klaytn.com/tx/" : "https://scope.klaytn.com/tx/",
 };

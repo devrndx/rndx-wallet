@@ -57,7 +57,7 @@ class TransactionHistory extends React.Component {
   renderHistory = () => {
     let { toggleHistory } = this.state;
     let { wallet, coins } = this.props;
-    let history = wallet.coinHistory.history.txs;
+    let history = wallet.coinHistory.history;
     let selectedCoin = wallet.selectedCoin;
     let coin = coins[selectedCoin];
 
@@ -92,13 +92,13 @@ class TransactionHistory extends React.Component {
                   <img
                     src={
                       "/images/wallet/" +
-                      (transaction.from === address ? "sent" : "received") +
+                      (transaction.fromAddr.toLowerCase() === address.toLowerCase() ? "sent" : "received") +
                       ".png"
                     }
                   />
                 </div>
                 <div className={style.dateHistory}>
-                  {formatDate(transaction.date, "DM")}
+                  {formatDate(parseInt(transaction.timeStamp) * 1000, "DM")}
                 </div>
               </Grid>
               <Grid item xs={6} className={style.descriptionHistory}>
@@ -107,16 +107,13 @@ class TransactionHistory extends React.Component {
               <Grid item xs={4} className={style.valueHistory}>
                 <div
                   className={
-                    transaction.from === address
+                    transaction.fromAddr.toLowerCase() === address.toLowerCase()
                       ? style.sentHistory
                       : style.receivedHistory
                   }
                 >
-                  {transaction.from !== address || "-"}
-                  {convertBiggestCoinUnit(
-                    transaction.amount,
-                    decimalPoint
-                  ).toFixed(decimalPoint)}
+                  {transaction.fromAddr.toLowerCase() !== address.toLowerCase() || "-"}
+                  { transaction.amount.toLocaleString() }
                 </div>
                 <div>
                 </div>
@@ -145,7 +142,7 @@ class TransactionHistory extends React.Component {
                     className={style.alignTimeInValueHistory}
                   >
                     <div className={style.timeInValueHistory}>
-                      {formatDate(transaction.date, "HMS")}
+                      {formatDate(parseInt(transaction.timeStamp) * 1000, "HMS")}
                     </div>
                   </Grid>
                 </Grid>
@@ -161,11 +158,11 @@ class TransactionHistory extends React.Component {
                         target="blanck"
                         href={
                           blockexplorer[selectedCoin]
-                            ? blockexplorer[selectedCoin] + transaction.txID
+                            ? blockexplorer[selectedCoin] + transaction.txHash
                             : ""
                         }
                       >
-                        {transaction.txID.substring(0, 33) + "..." || "-"}
+                        {transaction.txHash.substring(0, 33) + "..." || "-"}
                       </a>
                     </Grid>
                   </Grid>
@@ -178,7 +175,7 @@ class TransactionHistory extends React.Component {
                     </Grid>
                     <Grid item xs={10} className={style.descriptionHistory}>
                       <div className={style.fromTransactionHistory}>
-                        {transaction.from || "-"}
+                        {transaction.fromAddr || "-"}
                       </div>
                     </Grid>
                   </Grid>
@@ -191,25 +188,10 @@ class TransactionHistory extends React.Component {
                     </Grid>
                     <Grid item xs={10} className={style.descriptionHistory}>
                       <div className={style.forTransactionHistory}>
-                        {transaction.to || "-"}
+                        {transaction.toAddr || "-"}
                       </div>
                     </Grid>
                   </Grid>
-
-                  {transaction.promoCode && transaction.from === address ? (
-                    <Grid item xs={12} className={style.itemDataHistorico}>
-                      <Grid item xs={2} className={style.typeItems}>
-                        <div className={style.forTransactionHistory}>
-                          {i18n.t("TEXT_PROMOTIONAL")}
-                        </div>
-                      </Grid>
-                      <Grid item xs={10} className={style.descriptionHistory}>
-                        <div className={style.forTransactionHistory}>
-                          {transaction.promoCode}
-                        </div>
-                      </Grid>
-                    </Grid>
-                  ) : null}
                 </Grid>
               </Grid>
             </div>

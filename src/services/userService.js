@@ -94,21 +94,6 @@ class UserService {
         }
     }
 
-    async getUserPicture(email) {
-        const defaultImg = "images/lunio/lunio-user@300x300.jpg";
-        try {
-            let emailEncrypt = encryptMd5(email);
-            let response = await axios.get(
-                "https://en.gravatar.com/" + emailEncrypt + ".json",
-                HEADER_REQUEST
-            );
-
-            return response.data.entry[0].thumbnailUrl;
-        } catch (error) {
-            return defaultImg;
-        }
-    }
-
     async editUser(token, data) {
         let userData = {
             name: data.name,
